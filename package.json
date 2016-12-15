@@ -10,6 +10,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.0",
     "gulp-sass": "^3.0.0"
   },
   "repository": {
