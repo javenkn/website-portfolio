@@ -1,0 +1,40 @@
+@import "partials/_media_queries";
+
+.footer {
+  margin-top: 10px;
+  display: inline-block;
+
+  .content-wrap {
+    float: left;
+    margin-left: 20px;
+
+    nav {
+      a {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        color: rgba(0,0,0,0.7);
+        margin-right: 20px;
+        font: {
+          family: 'Rubik', sans-serif;
+          size: 14px;
+          weight: 700;
+        }
+        text-transform: uppercase;
+
+        &:hover {
+          color: rgba(0,0,0,1);
+        }
+      }
+    }
+
+    .copyright {
+      font: {
+        family: 'Rubik', sans-serif;
+        size: 12px;
+      }
+      text-transform: uppercase;
+    }
+  }
+
+}
