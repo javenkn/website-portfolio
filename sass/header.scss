@@ -2,7 +2,8 @@
 
 .header {
   height: 450px;
-  background-color: rgba(0,0,0,0.5);
+  background: url(../images/colorsovercity.jpg) center center;
+  background-size: cover;
 
   nav {
     float: right;
@@ -30,32 +31,27 @@
   .title {
     text-align: center;
     margin: 30px 30px;
-    color: white;
+    color: rgba(0,0,0,0.8);
     font: {
       family: 'Rubik', sans-serif;
       weight: 700;
-      size: 57px;
+      size: 8vw;
     }
     @include desktop {
       font-size: 75px;
     }
     @include tablet {
-      font-size: 67px;
+      font-size: 7.3vw;
     }
+    padding-top: 100px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     clear: both;
-    padding-top: 100px;
 
     span {
       display: inline-block;
-      border: 5px solid white;
-      @include desktop {
-        padding: 0.2em;
-      }
-      @include tablet {
-        padding: 0.2em;
-      }
+      border: 5px solid rgba(0,0,0,0.8);
+      padding: 0.2em;
     }
   }
 
