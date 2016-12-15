@@ -1,12 +1,14 @@
 @import "partials/_media_queries";
 
 .footer {
-  margin-top: 10px;
-  display: inline-block;
+  background: url(../images/colorsovercity.jpg) center center;
+  background-size: cover;
+
+  .lockup {
+    padding: 30px;
+  }
 
   .content-wrap {
-    float: left;
-    margin-left: 20px;
 
     nav {
       a {
@@ -29,6 +31,8 @@
     }
 
     .copyright {
+      margin-top: 10px;
+      color: white;
       font: {
         family: 'Rubik', sans-serif;
         size: 12px;
