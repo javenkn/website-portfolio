@@ -10,7 +10,7 @@
     text-align: center;
     font: {
         family: $font;
-        size: 17px;
+        size: 30px;
         weight: 700;
     }
     text-transform: uppercase;
@@ -75,7 +75,7 @@
         bottom: 0;
         color: white;
         padding: 40px;
-        font-family: $font;
+        font-family: $font2;
         text-align: center;
         transform: translate(0%, 100%) scale(0.5);
         transition: all 200ms ease-in-out;
