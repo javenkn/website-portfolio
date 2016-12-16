@@ -1,10 +1,10 @@
 @import "partials/_variables";
 
 .about {
-  background-color: $lightBlack;
+  // background: white;
 
   h3 {
-    color: white;
+    color: black;
     padding-top: 100px;
     text-align: center;
     font: {
@@ -31,7 +31,7 @@
   }
 
   .blurb {
-    color: white;
+    color: black;
     strong {
       font-weight: 700;
     }
