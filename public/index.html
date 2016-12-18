@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Javen Nakamoto</title>
-  <link rel="icon" href="http://localhost:3000/favicon.ico?v=2">
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
   <link rel="stylesheet" type="text/css" href="/css/font-icons.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="header">
     <nav>
-      <a href="">About Me</a>
-      <a href="">Projects</a>
-      <a href="">Contact</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
     <h1 class="title"><span>Javen Nakamoto</span></h1>
     <p class="kicker">Full-Stack Developer // Computer Engineer</p>
   </div>
-  <div class="about">
+  <div id="about" class="about">
     <h3>About Me</h3>
     <div class="face-lockup">
       <div class="face-img"></div>
@@ -29,7 +29,7 @@
       <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>  Morbi laoreet nibh sit amet magna venenatis egestas. Sed lobortis elit eu libero cursus imperdiet. Fusce semper erat tristique nulla euismod convallis. Nunc nec ligula vel odio rhoncus dictum. Suspendisse et auctor eros.</p>
     </div>
   </div>
-  <div class="project">
+  <div id="projects" class="projects">
     <h3>Projects</h3>
     <div class="project-wrap">
       <div class="project-display">
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <div class="contact">
+  <div id="contact" class="contact">
     <h3>Contact Me</h3>
     <div class="social-buttons">
       <a href="https://www.linkedin.com/in/javenkn" class="entypo-linkedin"></a>
@@ -63,13 +63,14 @@
     <div class="lockup">
       <div class="content-wrap">
         <nav>
-          <a href="">About Me</a>
-          <a href="">Projects</a>
-          <a href="">Contact</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
         <p class="copyright">All content copyright 2016</p>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="/js/functions.js"></script>
 </body>
 </html>
