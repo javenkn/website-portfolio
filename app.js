@@ -1,11 +1,13 @@
 const express = require('express');
 const path = require('path');
+const pug = require('pug');
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  res.sendFile('./index.html');
+  res.render('layout');
 });
 
 app.listen(3000, () => {
