@@ -5,6 +5,7 @@ const app = express();
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.render('layout');
