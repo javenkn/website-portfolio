@@ -36,13 +36,6 @@
     font: {
       family: $font;
       weight: 700;
-      size: 8vw;
-    }
-    @include desktop {
-      font-size: 75px;
-    }
-    @include tablet {
-      font-size: 7.3vw;
     }
     padding-top: 100px;
     text-transform: uppercase;
