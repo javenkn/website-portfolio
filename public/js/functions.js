@@ -1,7 +1,17 @@
 $(function() {
   smoothScroll(300);
   $(".header .title").fitText(1.2, { minFontSize: '25px', maxFontSize: '75px' });
+  $(".header .kicker").fitText(1.2, { minFontSize: '10px', maxFontSize: '14px' });
+  mobileNav();
 });
+
+function mobileNav() {
+  $('.mobile-nav-toggle').on('click', function(){
+    var status = $(this).hasClass('is-open');
+    if(status){ $('.mobile-nav-toggle, .mobile-nav').removeClass('is-open'); }
+    else { $('.mobile-nav-toggle, .mobile-nav').addClass('is-open'); }
+  });
+}
 
 function smoothScroll (duration) {
   $('a[href^="#"]').on('click', function(event) {

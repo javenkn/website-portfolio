@@ -6,28 +6,38 @@
   background: url(../images/colorsovercity.jpg) center center;
   background-size: cover;
 
-  nav {
+  .navBar {
+    display: flex;
     float: right;
-    a {
-      float: left;
-      margin: 30px 30px 0 0;
-      display: inline-block;
-      margin-left: 20px;
-      text-decoration: none;
-      cursor: pointer;
-      color: $lightBlack;
-      font: {
-        family: $font;
-        size: 17px;
-        weight: 700;
-      }
-      text-transform: uppercase;
 
-      &:hover {
-        color: black;
+    nav {
+      float: right;
+      li {
+        display: inline;
+
+        a {
+          float: left;
+          margin: 30px 30px 0 0;
+          display: inline-block;
+          margin-left: 20px;
+          text-decoration: none;
+          cursor: pointer;
+          color: $lightBlack;
+          font: {
+            family: $font;
+            size: 17px;
+            weight: 700;
+          }
+          text-transform: uppercase;
+
+          &:hover {
+            color: black;
+          }
+        }
       }
     }
   }
+
 
   .title {
     text-align: center;
@@ -58,5 +68,115 @@
       size: 14px;
     }
     text-transform: uppercase;
+
+    @media (min-width: 420px) and (max-width: 520px) {
+      font-size: 12px !important;
+    }
+
+    @media (max-width: 419px) {
+      font-size: 10px !important;
+    }
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+    width: 50px;
+    height: 50px;
+    margin: 20px 30px 0 0;
+    align-items: center;
+    cursor: pointer;
+
+    span,
+    span:before,
+    span:after {
+      content: "";
+      width: 100%;
+      display: block;
+      height: 2px;
+      background: #333;
+      position: relative;
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    span:before {
+      top: 15px;
+    }
+
+    span:after {
+      top: -17px;
+    }
+
+    &.is-open span {
+      background: transparent;
+    }
+
+    &.is-open span:before,
+    &.is-open span:after {
+      transform-origin: center;
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    &.is-open span:after {
+      top: -2px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    padding: 30px 0 20px;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      text-align: center;
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $lightBlack;
+        font: {
+          family: $font;
+          size: 14px;
+          weight: 700;
+        }
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .navBar {
+    width: auto;
+    position: relative;
+
+    nav {
+      display: none;
+    }
+
+    .mobile-nav-toggle {
+      display: flex;
+    }
+  }
+
+  .mobile-nav.is-open {
+    display: block;
+    transform: translateY(0%);
+  }
+
+  .title {
+    padding-top: 77px !important;
   }
 }

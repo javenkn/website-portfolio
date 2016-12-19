@@ -1,8 +1,18 @@
+mixin nav-content()
+  ul
+    li: a(href="#about") About Me
+    li: a(href="#projects") Projects
+    li: a(href="#contact") Contact
+
 .header
-  nav
-    a(href="#about") About Me
-    a(href="#projects") Projects
-    a(href="#contact") Contact
+  .mobile-nav
+    +nav-content()
+
+  .navBar
+    nav
+      +nav-content()
+    .mobile-nav-toggle
+      span
   h1.title
     span Javen Nakamoto
   p.kicker Full-Stack Developer // Computer Engineer
