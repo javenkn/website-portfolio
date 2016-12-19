@@ -22,7 +22,8 @@
       display: flex;
       justify-content: center;
 
-      a {
+      .entypo-linkedin {
+        font-size: 28px;
         display: block;
         width: 50px;
         margin-top: 15px;
@@ -34,29 +35,22 @@
         cursor: pointer;
         transition: transform 150ms ease-in-out;
 
-        &:nth-child(2n) {
-          margin-left: 20px;
+        &:hover {
+            background-color: #0073a4;
+            transform: scale(1.2);
+          }
+      }
+
+      .fontawesome-github {
+        @extend .entypo-linkedin;
+        margin-left: 20px;
+
+        &:hover {
+            background-color: #6e5494;
+            transform: scale(1.2);
         }
       }
     }
-  }
-
-  .entypo-linkedin {
-    font-size: 28px;
-
-    &:hover {
-        background-color: #0073a4;
-        transform: scale(1.2);
-      }
-  }
-
-  .fontawesome-github {
-    font-size: 28px;
-
-    &:hover {
-        background-color: #6e5494;
-        transform: scale(1.2);
-      }
   }
 
   .bigLink {
