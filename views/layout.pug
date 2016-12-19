@@ -1,3 +1,8 @@
 body
   include header.pug
-  script(type="text/javascript" src="/js/functions.js")
+  include about.pug
+  include projects.pug
+  include contact.pug
+  include footer.pug
+  script
+    include ../public/js/functions.js
