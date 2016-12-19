@@ -57,7 +57,7 @@
     display: inline-block;
     font: {
       family: $font;
-      size: 30px;
+      size: 70px;
       weight: 300;
     };
     color: $lightBlack;
@@ -68,6 +68,14 @@
 
     &:hover {
       opacity: 0.4;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 50px;
+    }
+
+    @media (max-width: 525px) {
+      font-size: 30px;
     }
   }
 }
