@@ -1,9 +1,6 @@
 $(function() {
   smoothScroll(300);
   $(".header .title").fitText(1.2, { minFontSize: '25px', maxFontSize: '75px' });
-  console.log($('.header .title'));
-  console.log($('.contact .bigLink'));
-  $(".contact .bigLink").fitText(1, { minFontSize: '25px', maxFontSize: '70px' });
 });
 
 function smoothScroll (duration) {
