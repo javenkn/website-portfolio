@@ -10,9 +10,25 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    background: rgba(0,0,0,0.3);
+
+    h2 {
+      display: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 40px;
+      color: rgb(229, 229, 229);
+      font: {
+        family: $font;
+        size: 50px;
+        weight: 700;
+      }
+    }
 
     nav {
-      float: right;
+      padding-bottom: 23px;
+      margin-top: -6px;
+
       li {
         display: inline;
 
@@ -23,7 +39,7 @@
           margin-left: 20px;
           text-decoration: none;
           cursor: pointer;
-          color: $lightBlack;
+          color: rgb(229, 229, 229);
           font: {
             family: $font;
             size: 17px;
@@ -48,7 +64,7 @@
       family: $font;
       weight: 700;
     }
-    padding-top: 75px;
+    padding-top: 57px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     clear: both;
@@ -83,7 +99,7 @@
     display: none;
     width: 50px;
     height: 50px;
-    margin: 15px 23px 0 0;
+    margin: 7px 23px 7px 0;
     align-items: center;
     cursor: pointer;
 
@@ -94,7 +110,7 @@
       width: 100%;
       display: block;
       height: 2px;
-      background: #333;
+      background: rgb(229, 229, 229);
       position: relative;
 
       transition: all 0.3s ease-in-out;
@@ -130,7 +146,6 @@
     position: absolute;
     width: 100%;
     background: transparent;
-    padding: 30px 0 20px;
     transform: translateY(-100%);
     transition: all 0.3s ease-in-out;
 
@@ -140,28 +155,33 @@
       padding: 0;
     }
 
-    li {
-      text-align: center;
-      margin-bottom: 10px;
-      a {
-        text-decoration: none;
-        cursor: pointer;
-        color: $lightBlack;
-        font: {
-          family: $font;
-          size: 14px;
-          weight: 700;
-        }
-        text-transform: uppercase;
+    a {
+      display: block;
+      padding: 5px 0 5px 20px;
+      cursor: pointer;
+
+      text-decoration: none;
+      cursor: pointer;
+      color: rgb(229, 229, 229);
+      font: {
+        family: $font;
+        size: 14px;
+        weight: 700;
       }
+      text-transform: uppercase;
     }
   }
 }
 
 @media (max-width: 720px) {
   .navBar {
+    justify-content: space-between !important;
     width: auto;
     position: relative;
+
+    h2 {
+      display: block !important;
+    }
 
     nav {
       display: none;
@@ -173,11 +193,19 @@
   }
 
   .mobile-nav.is-open {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     transform: translateY(0%);
-  }
+    background: rgba(0,0,0,0.3);
+    padding-top: 5px;
+    padding-bottom: 5px;
 
-  .title {
-    padding-top: 57px !important;
+    nav {
+      width: 100%;
+
+      li:hover {
+        background: rgba(0,0,0,0.3);
+      }
+    }
   }
 }
