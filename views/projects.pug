@@ -6,7 +6,7 @@ mixin project(name, image, website, description)
           .project-description= description
 
 div(id="projects" class="projects")
-  h3 Projects
+  h3.or-divider Projects
   .project-wrap
     +project('Omni Mood', '../images/omnimood.png', 'http://www.omnimood.com', 'A web application that displays the mood of countries based on emojis coming from Twitter’s real-time feed.')
     +project('HACC 3rd Place: Made in Hawaii', '../images/localmocos.png', 'https://github.com/javenkn/localmocos', 'A web application that connects local suppliers and consumers with Hawaii grown/organic products.')

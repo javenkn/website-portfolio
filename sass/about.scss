@@ -1,14 +1,14 @@
 @import "partials/_variables";
 
 .about {
-  background: #4C5364;
+  background: #474747;
 
   h3 {
-    color: black;
+    color: white;
     padding-top: 100px;
     text-align: center;
     font: {
-        family: $font;
+        family: 'Roboto', sans-serif;
         size: 30px;
         weight: 700;
       }
@@ -31,7 +31,7 @@
   }
 
   .blurb {
-    color: black;
+    color: white;
     strong {
       font-weight: 700;
     }

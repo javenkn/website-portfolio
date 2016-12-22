@@ -3,8 +3,16 @@
 
 .header {
   height: 450px;
-  background: url(../images/colorsovercity.jpg) center center;
+
+  @media (max-width: 520px) {
+    height: 375px;
+  }
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url(../images/header.jpg);
   background-size: cover;
+  opacity: 0.9;
 
   .navBar {
     display: flex;
@@ -17,7 +25,7 @@
       margin-top: 5px;
       margin-bottom: 5px;
       padding-left: 40px;
-      color: rgb(229, 229, 229);
+      color: white;
       font: {
         family: $font;
         size: 50px;
@@ -40,17 +48,13 @@
           margin-left: 20px;
           text-decoration: none;
           cursor: pointer;
-          color: rgb(229, 229, 229);
+          color: white;
           font: {
             family: $font;
             size: 17px;
             weight: 700;
           }
           text-transform: uppercase;
-
-          &:hover {
-            color: black;
-          }
         }
         a:before {
           content: "";
@@ -59,7 +63,7 @@
           height: 2px;
           bottom: 0;
           left: 0;
-          background: black;
+          background: white;
           border-radius: 5px;
           visibility: hidden;
           transform: scaleX(0);
@@ -78,7 +82,7 @@
   .title {
     text-align: center;
     margin: 30px 30px;
-    color: $lightBlack;
+    color: white;
     font: {
       family: $font;
       weight: 700;
@@ -90,7 +94,7 @@
 
     span {
       display: inline-block;
-      border: 5px solid $lightBlack;
+      border: 5px solid white;
       padding: 0.2em;
     }
   }
@@ -181,7 +185,7 @@
 
       text-decoration: none;
       cursor: pointer;
-      color: rgb(229, 229, 229);
+      color: white;
       font: {
         family: $font;
         size: 14px;
@@ -223,7 +227,7 @@
       width: 100%;
 
       li:hover {
-        background: rgba(0,0,0,0.3);
+        background: #595959;
       }
     }
   }

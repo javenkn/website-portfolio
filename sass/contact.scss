@@ -1,12 +1,14 @@
 @import "partials/_variables";
 
 .contact {
+  background: #474747;
+
   .contact-container {
     text-align: center;
     padding-bottom: 100px;
 
     h3 {
-      color: black;
+      color: white;
       padding-top: 100px;
       font: {
           family: $font;
@@ -43,6 +45,7 @@
 
       .fontawesome-github {
         @extend .entypo-linkedin;
+        font-size: 40px;
         margin-left: 20px;
 
         &:hover {
@@ -60,7 +63,7 @@
       size: 70px;
       weight: 300;
     };
-    color: $lightBlack;
+    color: white;
     cursor: pointer;
     line-height: 1;
     text-decoration: none;

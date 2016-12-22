@@ -2,8 +2,12 @@
 @import "partials/_variables";
 
 .footer {
-  background: url(../images/colorsovercity.jpg) center center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url(../images/footer.jpg);
   background-size: cover;
+  opacity: 0.9;
 
   .lockup {
     padding: 30px;
@@ -26,7 +30,7 @@
         text-transform: uppercase;
 
         &:hover {
-          color: black;
+          opacity: 0.7;
         }
       }
     }

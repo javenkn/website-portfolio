@@ -1,15 +1,14 @@
 @import "partials/_media_queries";
 
 .projects {
-
-  background: #e5eaee;
+  background: #333;
 
   h3 {
-    color: black;
+    color: white;
     padding-top: 100px;
     text-align: center;
     font: {
-        family: $font;
+        family: 'Roboto', sans-serif;;
         size: 30px;
         weight: 700;
     }
@@ -68,7 +67,7 @@
       }
       .project-meta {
         position: absolute;
-        background-color: fade-out($lightBlack, 0.3);
+        background-color: fade-out(rgba(0,0,0,0.7), 0.3);
         top: 0;
         left: 0;
         right: 0;
