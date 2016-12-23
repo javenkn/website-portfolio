@@ -1,9 +1,10 @@
 mixin project(name, image, website, description)
   .project-display
-    a.project-thumb(href=website style="background-image: url(" + image + ")")
-        .project-meta
-          .project-name= name
-          .project-description= description
+    a.project-thumb(href=website)
+      img(src=image)
+    p
+      b=name
+      =description
 
 div(id="projects" class="projects")
   h3.or-divider Projects
