@@ -1,8 +1,8 @@
 $(function() {
   smoothScroll(300);
   $(".header .title").fitText(1.2, { minFontSize: '25px', maxFontSize: '75px' });
-  $(".header .kicker").fitText(1.2, { minFontSize: '10px', maxFontSize: '14px' });
   mobileNav();
+  $(window).scroll(navSlide);
 });
 
 function mobileNav() {
@@ -25,6 +25,20 @@ function smoothScroll (duration) {
           }, duration);
       }
   });
+}
+
+function navSlide() {
+  var $nav_header = $('.navBar');
+  var navBar_height = $('.navBar').height(),
+    header_height = $('.header').height(),
+    offset_val = header_height - navBar_height;
+  var scroll_top = $(window).scrollTop();
+  if(scroll_top >= offset_val) {
+    $nav_header.addClass('is-scrollable');
+    $('.title').css('margin-top', '0px');
+  } else {
+    $nav_header.removeClass('is-scrollable');
+  }
 }
 
 (function( $ ){
