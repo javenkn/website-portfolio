@@ -2,11 +2,22 @@
 @import "partials/_variables";
 
 .header {
+  height: 450px;
+
+  @media (min-width: 605px) and (max-width: 800px) {
+    height: 385px
+  }
+
+  @media (max-width: 604px) {
+    height: 340px;
+  }
+
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ), url(../images/header.jpg);
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   opacity: 0.9;
 
@@ -80,13 +91,18 @@
 
   .title {
     text-align: center;
-    margin: 30px 30px;
+    margin: 0 30px 30px;
     color: white;
     font: {
       family: $font;
       weight: 700;
     }
     padding-top: 75px;
+
+    @media (min-width: 801px) {
+      padding-top: 90px;
+    }
+
     text-transform: uppercase;
     letter-spacing: 0.05em;
     clear: both;
@@ -107,7 +123,6 @@
       size: 14px;
     }
     text-transform: uppercase;
-    padding-bottom: 125px;
 
     @media (min-width: 420px) and (max-width: 520px) {
       font-size: 12px !important;
