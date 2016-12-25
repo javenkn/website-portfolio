@@ -94,11 +94,10 @@
               window.setTimeout(callback, 1000 / 60);
             };
   })();
-  $(document).ready(function(){
-    onResize();
-    window.addEventListener('resize', onResize, false);
 
-    header.appendChild(canvas);
-  });
+  onResize();
+  window.addEventListener('resize', onResize, false);
+
+  header.appendChild(canvas);
 
 })();
