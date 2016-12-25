@@ -8,7 +8,7 @@ app.set('view engine', 'pug');
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.render('layout');
+  res.sendFile('/index.html');
 });
 
 app.listen(3000, () => {
