@@ -1,20 +1,16 @@
 (function () {
 
   var COUNT = 300;
-  var body = document.querySelector('body');
+  var header = document.querySelector('.header');
   var canvas = document.createElement('canvas');
   var ctx = canvas.getContext('2d');
-  var width = body.clientWidth;
-  var height = body.clientHeight;
+  var width = header.clientWidth;
+  var height = header.clientHeight;
   var active = false;
 
-  if(height > 2258) {
-    height = 2258;
-  }
-
   function onResize() { // when window resizes
-    width = body.clientWidth;
-    height = body.clientHeight;
+    width = header.clientWidth;
+    height = header.clientHeight;
     canvas.width = width;
     canvas.height = height;
     ctx.fillStyle = '#FFF';
@@ -102,6 +98,6 @@
   onResize();
   window.addEventListener('resize', onResize, false);
 
-  body.appendChild(canvas);
+  header.appendChild(canvas);
 
 })();
