@@ -2,11 +2,6 @@
 @import "partials/_variables";
 
 .header {
-  height: 450px;
-
-  @media (max-width: 520px) {
-    height: 375px;
-  }
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
@@ -91,7 +86,7 @@
       family: $font;
       weight: 700;
     }
-    padding-top: 57px;
+    padding-top: 75px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     clear: both;
@@ -112,6 +107,7 @@
       size: 14px;
     }
     text-transform: uppercase;
+    padding-bottom: 125px;
 
     @media (min-width: 420px) and (max-width: 520px) {
       font-size: 12px !important;
