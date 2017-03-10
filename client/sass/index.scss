@@ -1,0 +1,42 @@
+// Partials
+@import "partials/_general_styles";
+@import "partials/_clearfix";
+@import "partials/_reset";
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.menu {
+  padding: 20px;
+}
+
+.detail {
+  flex-grow: 2;
+  margin-top: 100px;
+  margin-right: 50px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.name {
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  align-self: flex-end;
+}

@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -14,10 +15,19 @@ module.exports = {
     filename: 'index_bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/}
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.scss$/,
+        // use: ExtractTextPlugin.extract({
+        //   fallback: 'style-loader',
+          loader: 'style-loader!css-loader!sass-loader'
+        // })
+      }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    // new ExtractTextPlugin('client/style.css')
+  ]
 };
