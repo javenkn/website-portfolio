@@ -7,10 +7,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Menlo-regular;
+}
+
 #app {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
+  justify-content: space-between;
 }
 
 .menu {
@@ -18,21 +23,38 @@
 }
 
 .detail {
-  flex-grow: 2;
-  margin-top: 100px;
+  width: 55%;
+  height: 80vh;
+  margin-top: 50px;
   margin-right: 50px;
   border: 1px solid black;
   padding: 20px;
 }
+
+#typewriter {
+  display: flex;
+  flex-direction: column;
+}
+
 .name {
-  font-family: 'Lobster', cursive;
   font-size: 50px;
   margin-bottom: 30px;
+  border-right: .05em solid;
+  animation: caret 1.2s steps(1) infinite;
 }
 
 .tab {
-  margin-bottom: 20px;
+  display: inline-block;
+  margin-bottom: 30px;
   font-size: 30px;
+  border-right: .07em solid;
+  animation: caret 1.2s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .footer {
