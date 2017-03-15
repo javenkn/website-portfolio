@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer.jsx';
 import NavLink from './NavLink.jsx';
 import TabBar from './TabBar.jsx';
 require('../sass/detail.scss');
@@ -40,6 +41,7 @@ export default class Detail extends React.Component {
           {navBarItems}
         </div>
         <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen}/>
+        <Footer />
       </div>
     )
   }
