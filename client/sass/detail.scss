@@ -6,9 +6,10 @@
 .detail {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  position: relative;
+  width: 85%;
   margin: auto;
-  height: 70vh;
+  height: 87vh;
   background-color: #2B303B;
 }
 
@@ -35,4 +36,15 @@
     color: #DFE1DD;
     cursor: default;
   }
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  align-self: flex-end;
+  background-color: #1B1E25;
+  color: #4D5964;
+  font-size: 17px;
+  padding: 5px;
+  padding-left: 15px;
 }
