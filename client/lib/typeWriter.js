@@ -9,8 +9,7 @@ const exports = {
         writingTag = false,
         tagOpen = false,
         typeSpeed = 150,
-        tempTypeSpeed = 0,
-        removeAttrChild = 0; // remove blinking cursor
+        tempTypeSpeed = 0;
 
     let type = function() {
       if (writingTag === true) {
@@ -45,11 +44,6 @@ const exports = {
           tempTypeSpeed = typeSpeed + 50;
           writingTag = false;
           if (tagOpen) {
-            let removeFromElement = document.getElementsByTagName('p')[removeAttrChild];
-            if(removeFromElement) {
-              removeFromElement.style.borderRight = 'none';
-              removeAttrChild += 1;
-            }
             let newSpan = document.createElement("span");
             t.appendChild(newSpan);
             newSpan.innerHTML = tag;
@@ -58,7 +52,7 @@ const exports = {
       }
 
       cursorPosition += 1;
-      if (cursorPosition < HTML.length - 1) {
+      if (cursorPosition <= HTML.length - 1) {
           setTimeout(type, tempTypeSpeed);
       }
     };
