@@ -1,0 +1,43 @@
+// Partials
+@import "partials/_general_styles";
+@import "partials/_clearfix";
+@import "partials/_reset";
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  height: 70vh;
+  background-color: #2B303B;
+}
+
+.tabBar {
+  background-color: #1C1F26;
+  height: 50px;
+  width: 100%;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;
+  background-color: #232830;
+  width: 200px;
+  height: 100%;
+}
+
+.navLink {
+  display: inline-block;
+  color: #65737F;
+  margin-top: 15px;
+  margin-left: 20px;
+
+  &:nth-child(1) {
+    margin-top: 65px;
+  }
+
+  &:hover {
+    color: #DFE1DD;
+    cursor: default;
+  }
+}
