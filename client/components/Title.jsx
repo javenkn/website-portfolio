@@ -1,5 +1,6 @@
 import React from 'react';
 import Tab from './Tab.jsx';
+import LineNumber from './LineNumber.jsx';
 import typeWriter from '../lib/typeWriter.js';
 
 export default class App extends React.Component {
@@ -12,7 +13,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div id="typewriter">Javen Nakamoto</div>
+      <div id="typewriter">
+        <LineNumber lineNum={1} />
+        <div className="title">Hi I'm Javen Nakamoto</div>
+      </div>
     );
   }
 }

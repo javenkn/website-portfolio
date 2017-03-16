@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from './Footer.jsx';
 import NavLink from './NavLink.jsx';
 import TabBar from './TabBar.jsx';
+import File from './File.jsx';
+import Title from './Title.jsx';
 require('../sass/detail.scss');
 
 export default class Detail extends React.Component {
@@ -9,8 +11,8 @@ export default class Detail extends React.Component {
     super(props);
 
     this.state = {
-      numTabsOpen: 0,
-      tabsOpened: []
+      numTabsOpen: 1,
+      tabsOpened: ["welcome.js"]
     };
   }
 
@@ -40,7 +42,10 @@ export default class Detail extends React.Component {
         <div className="navBar">
           {navBarItems}
         </div>
-        <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen}/>
+        <div className="tabContainer">
+          <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen}/>
+          <Title />
+        </div>
         <Footer />
       </div>
     )
