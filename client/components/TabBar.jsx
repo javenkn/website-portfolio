@@ -4,6 +4,12 @@ require('../sass/tabBar.scss');
 
 export default class TabBar extends React.Component {
 
+  componentDidMount() {
+    const welcomeTab = document.getElementsByClassName('tab')[0];
+    welcomeTab.style.backgroundColor = '#2B303B';
+    welcomeTab.style.color = '#DEE0DC';
+  }
+
   render() {
     let tabArr = this.props.tabsOpened;
     let openTabs = [];
