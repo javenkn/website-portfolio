@@ -4,6 +4,14 @@ require('../sass/tabBar.scss');
 
 export default class TabBar extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedTab: props.tabSelected
+    };
+  }
+
   componentDidMount() {
     const welcomeTab = document.getElementsByClassName('tabWrapper')[0];
     welcomeTab.style.backgroundColor = '#2B303B';
@@ -28,11 +36,15 @@ export default class TabBar extends React.Component {
     }
   }
 
+  selectTab(tab, event) {
+    this.setState({selectedTab: tab});
+  }
+
   render() {
     let openTabs = [];
     const tabArr = this.props.tabsOpened;
     for(let i = 0; i < tabArr.length; i++) {
-      let newTab = <Tab key={i} tabName={tabArr[i]} />;
+      let newTab = <Tab key={i} tabName={tabArr[i]} selectTab={this.selectTab.bind(this, tabArr[i])} />;
       openTabs.push(newTab);
     }
 
