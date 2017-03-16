@@ -7,7 +7,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_TAB':
-      console.log(state);
       return Object.assign({}, state, {
         numTabsOpen: state.numTabsOpen,
         selectedTab: action.data.tab,
