@@ -24,7 +24,11 @@ const reducer = (state = initialState, action) => {
           openedTabs: newTabsOpened
         });
       } else {
-        return state;
+        return Object.assign({}, state, { // same thing without the additional 1 tab to numTabsOpen
+          numTabsOpen: state.numTabsOpen,
+          selectedTab: action.data.tab,
+          openedTabs: newTabsOpened
+        });
       }
       break;
     default:
