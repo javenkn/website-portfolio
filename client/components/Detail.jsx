@@ -4,40 +4,29 @@ import NavLink from './NavLink.jsx';
 import TabBar from './TabBar.jsx';
 import File from './File.jsx';
 import Title from './Title.jsx';
+
+import { connect } from 'react-redux';
+import {
+  changeTab,
+  openTab
+} from '../actions/tab.js';
+
 require('../sass/detail.scss');
 
-export default class Detail extends React.Component {
-  constructor(props) {
-    super(props);
+const mapStateToProps = (state) => {
+  return state;
+};
 
-    this.state = {
-      numTabsOpen: 1,
-      tabsOpened: ["welcome.js"],
-      tabSelected: "welcome.js"
-    };
-  }
-
-  showTab(tabName, event) {
-    let newTabsOpened = this.state.tabsOpened.slice(); // creates new instance of tabsOpened
-    if(newTabsOpened.indexOf(tabName) == -1) {
-      newTabsOpened.push(tabName);
-    }
-
-    this.setState(prevState => ({
-      numTabsOpen: prevState.numTabsOpen + 1,
-      tabsOpened: newTabsOpened,
-      tabSelected: tabName
-    }));
-  }
+class Detail extends React.Component {
 
   render() {
-    const tabsOpened = this.state.tabsOpened;
-    const numTabsOpen = this.state.numTabsOpen;
-    const tabSelected = this.state.tabSelected;
+    const openedTabs = this.props.openedTabs;
+    const numTabsOpen = this.props.numTabsOpen;
+    const selectedTab = this.props.selectedTab;
 
     const navBarItems = ["About", "Projects", "Contact Me"].map((item, i) => {
       return (
-        <NavLink key={i} navName={item} showTab={this.showTab.bind(this, item)} />
+        <NavLink key={i} navName={item} showTab={this.props.openTab.bind(this, item)} />
       );
     });
 
@@ -48,9 +37,9 @@ export default class Detail extends React.Component {
         </div>
         <div className="tabContainer">
           <TabBar
-            tabsOpened={tabsOpened}
+            openedTabs={openedTabs}
             numTabsOpen={numTabsOpen}
-            tabSelected={tabSelected}
+            selectedTab={selectedTab}
           />
           <Title />
         </div>
@@ -59,3 +48,8 @@ export default class Detail extends React.Component {
     )
   }
 }
+
+export default connect(mapStateToProps, {
+  changeTab,
+  openTab
+})(Detail);

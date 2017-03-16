@@ -1,16 +1,16 @@
 import React from 'react';
 import Tab from './Tab.jsx';
+import {connect} from 'react-redux';
+import {
+  changeTab
+} from '../actions/tab.js';
 require('../sass/tabBar.scss');
 
-export default class TabBar extends React.Component {
+const mapStateToProps = (state) => {
+  return state;
+};
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedTab: props.tabSelected
-    };
-  }
+class TabBar extends React.Component {
 
   componentDidMount() {
     const welcomeTab = document.getElementsByClassName('tabWrapper')[0];
@@ -19,10 +19,10 @@ export default class TabBar extends React.Component {
   }
 
   componentDidUpdate() {
-    const tabArr = this.props.tabsOpened;
+    const tabArr = this.props.openedTabs;
     for(let i = 0; i < tabArr.length; i++) {
       const selectedTab = document.getElementsByClassName('tabWrapper')[i];
-      if(this.props.tabSelected === tabArr[i]) {
+      if(this.props.selectedTab === tabArr[i]) {
         selectedTab.style.backgroundColor = '#2B303B';
         selectedTab.style.color = '#DEE0DC';
         selectedTab.children[1].style.visibility = 'visible'; // shows the exit X
@@ -36,15 +36,11 @@ export default class TabBar extends React.Component {
     }
   }
 
-  selectTab(tab, event) {
-    this.setState({selectedTab: tab});
-  }
-
   render() {
     let openTabs = [];
-    const tabArr = this.props.tabsOpened;
+    const tabArr = this.props.openedTabs;
     for(let i = 0; i < tabArr.length; i++) {
-      let newTab = <Tab key={i} tabName={tabArr[i]} selectTab={this.selectTab.bind(this, tabArr[i])} />;
+      let newTab = <Tab key={i} tabName={tabArr[i]} selectTab={this.props.changeTab.bind(this, tabArr[i])} />;
       openTabs.push(newTab);
     }
 
@@ -55,3 +51,7 @@ export default class TabBar extends React.Component {
     )
   }
 }
+
+export default connect(mapStateToProps, {
+  changeTab
+})(TabBar);
