@@ -16,17 +16,3 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-
-#typewriter {
-  width: fit-content;
-  margin: auto;
-  font-size: 40px;
-  border-right: .05em solid;
-  animation: caret 1.2s steps(1) infinite;
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
