@@ -9,7 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: './client/index.js', // specifies entry file where bundler starts
+  entry: './client/app.js', // specifies entry file where bundler starts
   output: { // location where bundled Javascript code is saved
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
