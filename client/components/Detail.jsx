@@ -47,7 +47,11 @@ export default class Detail extends React.Component {
           {navBarItems}
         </div>
         <div className="tabContainer">
-          <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen} tabSelected={tabSelected}/>
+          <TabBar
+            tabsOpened={tabsOpened}
+            numTabsOpen={numTabsOpen}
+            tabSelected={tabSelected}
+          />
           <Title />
         </div>
         <Footer />
