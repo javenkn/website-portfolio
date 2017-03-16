@@ -16,13 +16,13 @@
 .tabWrapper {
   display: flex;
   flex-direction: row;
+  cursor: default;
 }
 
 .tab {
   display: flex;
   align-items: flex-end;
   padding: 0px 40px 15px 12px;
-  color: #65737F;
 
   &:nth-child(1) {
     padding-left: 10px;
@@ -31,6 +31,10 @@
   &:hover {
     color: #BBC0C8;
   }
+}
+
+.tab.no-hover:hover {
+  color: #DEE0DC;
 }
 
 #typewriter {

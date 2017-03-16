@@ -12,7 +12,8 @@ export default class Detail extends React.Component {
 
     this.state = {
       numTabsOpen: 1,
-      tabsOpened: ["welcome.js"]
+      tabsOpened: ["welcome.js"],
+      tabSelected: "welcome.js"
     };
   }
 
@@ -24,13 +25,16 @@ export default class Detail extends React.Component {
 
     this.setState(prevState => ({
       numTabsOpen: prevState.numTabsOpen + 1,
-      tabsOpened: newTabsOpened
+      tabsOpened: newTabsOpened,
+      tabSelected: tabName
     }));
   }
 
   render() {
     const tabsOpened = this.state.tabsOpened;
-    const numTabsOpen = this.state.navClicked;
+    const numTabsOpen = this.state.numTabsOpen;
+    const tabSelected = this.state.tabSelected;
+
     const navBarItems = ["About", "Projects", "Contact Me"].map((item, i) => {
       return (
         <NavLink key={i} navName={item} showTab={this.showTab.bind(this, item)} />
@@ -43,7 +47,7 @@ export default class Detail extends React.Component {
           {navBarItems}
         </div>
         <div className="tabContainer">
-          <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen}/>
+          <TabBar tabsOpened={tabsOpened} numTabsOpen={numTabsOpen} tabSelected={tabSelected}/>
           <Title />
         </div>
         <Footer />
