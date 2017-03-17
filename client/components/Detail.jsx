@@ -30,6 +30,21 @@ class Detail extends React.Component {
       );
     });
 
+    let tabDetail = <Title />;
+    switch(selectedTab) {
+      case 'About':
+        tabDetail = <File content='All About Me' />;
+        break;
+      case 'Projects':
+        tabDetail = <File content='My Projects I Worked On' />;
+        break;
+      case 'Contact Me':
+        tabDetail = <File content='Contact Me!' />;
+        break;
+      default:
+        break;
+    }
+
     return (
       <div className="detail">
         <div className="navBar">
@@ -41,7 +56,7 @@ class Detail extends React.Component {
             numTabsOpen={numTabsOpen}
             selectedTab={selectedTab}
           />
-          <Title />
+          {tabDetail}
         </div>
         <Footer />
       </div>
