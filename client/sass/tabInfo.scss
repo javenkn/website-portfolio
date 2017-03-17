@@ -1,0 +1,50 @@
+.file {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  padding-bottom: 27px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+
+  .info {
+    display: inline-block;
+    color: #DEE0DC;
+  }
+
+  .line {
+    display: inline-block;
+    padding: 0px 35px;
+    margin-right: 10px;
+    color: #767B85;
+  }
+
+  .infoWrapper:nth-child(n+11) {
+    .line {
+      padding-left: 20px;
+    }
+  }
+}
+
+.about, .projects, .contact {
+  @extend .file;
+}
+
+.projects {
+  font-size: 18px;
+
+  .infoWrapper:nth-child(n+11) {
+    .line {
+      padding-left: 24px;
+    }
+  }
+}
+
+.contact {
+  .infoWrapper:nth-child(n+11) {
+    .line {
+      padding-left: 20px;
+    }
+  }
+}
