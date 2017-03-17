@@ -12,6 +12,7 @@ import {
 } from '../actions/tab.js';
 
 require('../sass/detail.scss');
+require('../sass/tabInfo.scss');
 
 const mapStateToProps = (state) => {
   return state;
@@ -24,22 +25,78 @@ class Detail extends React.Component {
     const numTabsOpen = this.props.numTabsOpen;
     const selectedTab = this.props.selectedTab;
 
-    const navBarItems = ["About", "Projects", "Contact Me"].map((item, i) => {
+    const navBarItems = ["about.json", "Projects", "Contact Me"].map((item, i) => {
       return (
         <NavLink key={i} navName={item} showTab={this.props.openTab.bind(this, item)} />
       );
     });
 
     let tabDetail = <Title />;
+
+    let content;
+
     switch(selectedTab) {
-      case 'About':
-        tabDetail = <File content='All About Me' />;
+      case 'about.json':
+        content = [
+                    '{',
+                    '\xa0' + '"name": "Javen Nakamoto",',
+                    '\xa0' + '"location": "Honolulu, HI",',
+                    '\xa0' + '"university": "University of Hawaii at Manoa",',
+                    '\xa0' + '"graduation-date": "December 2016",',
+                    '\xa0' + '"major": "Computer Engineer",',
+                    '\xa0' + '"hobbies": [',
+                    '\xa0\xa0' + '"basketball", "fitness", "swimming"',
+                    '\xa0' + ']',
+                    '}'
+                  ];
+        tabDetail = <File content={content} class="about" />;
         break;
       case 'Projects':
-        tabDetail = <File content='My Projects I Worked On' />;
+        content = [
+                    'let projects = [',
+                    '\xa0\xa0' + '{',
+                    '\xa0\xa0\xa0' + 'Made in Hawaii: {',
+                    '\xa0\xa0\xa0\xa0' + "description: 'A web application that connects local suppliers and consumers",
+                    '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "with Hawaii grown/organic products.',",
+                    '\xa0\xa0\xa0\xa0' + "date: 'September, 2016',",
+                    '\xa0\xa0\xa0\xa0' + "link: 'https://github.com/javenkn/localmocos',",
+                    '\xa0\xa0\xa0' + '}',
+                    '\xa0\xa0' + '},',
+                    '\xa0\xa0' + '{',
+                    '\xa0\xa0\xa0' + 'Omni Mood: {',
+                    '\xa0\xa0\xa0' + "description: 'A web application that displays the mood of countries based on emojis",
+                    '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "coming from Twitter’s real-time feed.',",
+                    '\xa0\xa0\xa0\xa0' + "date: 'September - October, 2016',",
+                    '\xa0\xa0\xa0' + "link: 'https://github.com/javenkn/omnimood',",
+                    '\xa0\xa0' + '}',
+                    '\xa0' + '},',
+                    '\xa0' +'{',
+                    '\xa0\xa0' + 'Running Your Mouth : {',
+                    '\xa0\xa0\xa0' + "description: 'A voice-controlled endless runner game using Unity for",
+                    '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "Global Game Jam 2017.",
+                    '\xa0\xa0\xa0\xa0' + "date: 'January 20 - 22, 2017',",
+                    '\xa0\xa0\xa0' + "link: 'http://globalgamejam.org/2017/games/running-your-mouth',",
+                    '\xa0\xa0' + '}',
+                    '\xa0' + '},',
+                    ']'
+                  ]
+        tabDetail = <File content={content} class="projects"/>;
         break;
       case 'Contact Me':
-        tabDetail = <File content='Contact Me!' />;
+        content = [
+                    'let contacts = [',
+                    '\xa0' + '{',
+                    '\xa0\xa0' + "email: 'javenkn7@gmail.com',",
+                    '\xa0' + '},',
+                    '\xa0' + '{',
+                    '\xa0\xa0' + "linkedin: 'https://linkedin.com/in/javenkn'",
+                    '\xa0' + '},',
+                    '\xa0' + '{',
+                    '\xa0\xa0' + "github: 'https://github.com/javenkn'",
+                    '\xa0' + '},',
+                    ']'
+                  ]
+        tabDetail = <File content={content} class="contact"/>;
         break;
       default:
         break;
