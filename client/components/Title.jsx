@@ -14,7 +14,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="typewriter">
-        <LineNumber lineNum={1} />
+        <LineNumber class="line-title" lineNum={1} />
         <div className="title">Hi I'm Javen Nakamoto</div>
       </div>
     );
