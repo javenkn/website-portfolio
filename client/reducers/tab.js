@@ -1,7 +1,7 @@
 const initialState = {
   numTabsOpen: 1,
-  selectedTab: 'welcome.txt',
-  openedTabs: ['welcome.txt']
+  selectedTab: 'README',
+  openedTabs: ['README']
 };
 
 const reducer = (state = initialState, action) => {
