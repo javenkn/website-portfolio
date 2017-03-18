@@ -17,6 +17,14 @@
   display: flex;
   flex-direction: row;
   cursor: default;
+
+  &:hover .exit {
+    visibility: visible !important;
+  }
+
+  &:hover .tab {
+    color: #BBC0C8;
+  }
 }
 
 .tab {
@@ -26,10 +34,6 @@
 
   &:nth-child(1) {
     padding-left: 10px;
-  }
-
-  &:hover {
-    color: #BBC0C8;
   }
 }
 
