@@ -15,3 +15,12 @@ export function openTab(tabName) {
     }
   };
 }
+
+export function closeTab(tabName) {
+  return {
+    type: 'CLOSE_TAB',
+    data: {
+      tab: tabName
+    }
+  };
+}

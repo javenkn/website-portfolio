@@ -2,7 +2,8 @@ import React from 'react';
 import Tab from './Tab.jsx';
 import {connect} from 'react-redux';
 import {
-  changeTab
+  changeTab,
+  closeTab
 } from '../actions/tab.js';
 require('../sass/tabBar.scss');
 
@@ -41,7 +42,13 @@ class TabBar extends React.Component {
     let openTabs = [];
     const tabArr = this.props.openedTabs;
     for(let i = 0; i < tabArr.length; i++) {
-      let newTab = <Tab key={i} tabName={tabArr[i]} selectTab={this.props.changeTab.bind(this, tabArr[i])} />;
+      let newTab =
+      <Tab
+        key={i}
+        tabName={tabArr[i]}
+        selectTab={this.props.changeTab.bind(this, tabArr[i])}
+        closeTab={this.props.closeTab.bind(this, tabArr[i])}
+      />;
       openTabs.push(newTab);
     }
 
@@ -54,5 +61,6 @@ class TabBar extends React.Component {
 }
 
 export default connect(mapStateToProps, {
-  changeTab
+  changeTab,
+  closeTab
 })(TabBar);

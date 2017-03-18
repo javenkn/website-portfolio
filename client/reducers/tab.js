@@ -15,7 +15,8 @@ const reducer = (state = initialState, action) => {
     case 'OPEN_TAB':
       const newTabsOpened = state.openedTabs.slice();
       const tab = action.data.tab;
-      if(newTabsOpened.indexOf(tab) == -1) { // checks if there are none of the same tab
+      const indexOfTab = newTabsOpened.indexOf(tab);
+      if(indexOfTab === -1) { // checks if there are none of the same tab
         newTabsOpened.push(tab);
         return Object.assign({}, state, {
           numTabsOpen: state.numTabsOpen + 1,
@@ -30,6 +31,18 @@ const reducer = (state = initialState, action) => {
         });
       }
       break;
+    case 'CLOSE_TAB':
+      const currTabsOpened = state.openedTabs.slice();
+      const closeTab = action.data.tab;
+      const index = currTabsOpened.indexOf(closeTab);
+      if(indexOfTab !== -1) {
+        currTabsOpened.splice(index, 1);
+      }
+      return Object.assign({}, state, {
+        numTabsOpen: state.numTabsOpen - 1,
+        selectedTab: action.data.tab,
+        openedTabs: currTabsOpened
+      });
     default:
       return state;
   }
