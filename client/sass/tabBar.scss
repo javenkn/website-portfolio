@@ -33,8 +33,14 @@
   }
 }
 
-.tab.no-hover:hover {
-  color: #DEE0DC;
+.selectedTab {
+  display: flex;
+  align-items: flex-end;
+  padding: 0px 40px 15px 12px;
+
+  &:nth-child(1) {
+    padding-left: 10px;
+  }
 }
 
 #typewriter {

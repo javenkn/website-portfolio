@@ -16,6 +16,7 @@ class TabBar extends React.Component {
     const welcomeTab = document.getElementsByClassName('tabWrapper')[0];
     welcomeTab.style.backgroundColor = '#2B303B';
     welcomeTab.style.color = '#DEE0DC';
+    welcomeTab.children[0].className = 'selectedTab';
   }
 
   componentDidUpdate() {
@@ -26,12 +27,12 @@ class TabBar extends React.Component {
         selectedTab.style.backgroundColor = '#2B303B';
         selectedTab.style.color = '#DEE0DC';
         selectedTab.children[1].style.visibility = 'visible'; // shows the exit X
-        selectedTab.children[0].className += ' no-hover';
+        selectedTab.children[0].className = 'selectedTab';
       } else {
         selectedTab.style.backgroundColor = '#1C1F26';
         selectedTab.style.color = '#65737F';
         selectedTab.children[1].style.visibility = 'hidden'; // hides the exit X
-        selectedTab.children[0].className = selectedTab.children[0].className.slice(0,3); // changes class back to tab only
+        selectedTab.children[0].className = 'tab'; // changes class back to tab
       }
     }
   }
