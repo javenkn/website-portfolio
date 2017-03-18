@@ -35,14 +35,26 @@ const reducer = (state = initialState, action) => {
       const currTabsOpened = state.openedTabs.slice();
       const closeTab = action.data.tab;
       const index = currTabsOpened.indexOf(closeTab);
-      if(indexOfTab !== -1) {
+      const tabBefore = currTabsOpened[index - 1];
+      if(index !== -1) {
         currTabsOpened.splice(index, 1);
       }
-      return Object.assign({}, state, {
-        numTabsOpen: state.numTabsOpen - 1,
-        selectedTab: action.data.tab,
-        openedTabs: currTabsOpened
-      });
+      if(closeTab !== state.selectedTab) {
+        // if the tab to be closed isn't the selected tab
+        // then keep the selectedTab state the same
+        return Object.assign({}, state, {
+          numTabsOpen: state.numTabsOpen - 1,
+          selectedTab: state.selectedTab,
+          openedTabs: currTabsOpened
+        });
+      } else { // else move the selectedTab state to the left
+        return Object.assign({}, state, {
+          numTabsOpen: state.numTabsOpen - 1,
+          selectedTab: tabBefore,
+          openedTabs: currTabsOpened
+        });
+      }
+      break;
     default:
       return state;
   }
