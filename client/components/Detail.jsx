@@ -64,27 +64,27 @@ class Detail extends React.Component {
                     '\xa0\xa0' + '},',
                     '\xa0\xa0' + '{',
                     '\xa0\xa0\xa0' + 'Omni Mood: {',
-                    '\xa0\xa0\xa0' + "description: 'A web application that displays the mood of countries based on emojis",
+                    '\xa0\xa0\xa0\xa0' + "description: 'A web application that displays the mood of countries based on emojis",
                     '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "coming from Twitter’s real-time feed.',",
                     '\xa0\xa0\xa0\xa0' + "date: 'September - October, 2016',",
-                    '\xa0\xa0\xa0' + "link: 'https://github.com/javenkn/omnimood',",
-                    '\xa0\xa0' + '}',
-                    '\xa0' + '},',
-                    '\xa0' +'{',
-                    '\xa0\xa0' + 'Running Your Mouth : {',
-                    '\xa0\xa0\xa0' + "description: 'A voice-controlled endless runner game using Unity for",
+                    '\xa0\xa0\xa0\xa0' + "link: 'https://github.com/javenkn/omnimood',",
+                    '\xa0\xa0\xa0' + '}',
+                    '\xa0\xa0' + '},',
+                    '\xa0\xa0' +'{',
+                    '\xa0\xa0\xa0' + 'Running Your Mouth : {',
+                    '\xa0\xa0\xa0\xa0' + "description: 'A voice-controlled endless runner game using Unity for",
                     '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + "Global Game Jam 2017.",
                     '\xa0\xa0\xa0\xa0' + "date: 'January 20 - 22, 2017',",
-                    '\xa0\xa0\xa0' + "link: 'http://globalgamejam.org/2017/games/running-your-mouth',",
-                    '\xa0\xa0' + '}',
-                    '\xa0' + '},',
-                    ']'
+                    '\xa0\xa0\xa0\xa0' + "link: 'http://globalgamejam.org/2017/games/running-your-mouth',",
+                    '\xa0\xa0\xa0' + '}',
+                    '\xa0\xa0' + '},',
+                    '];'
                   ]
         tabDetail = <File content={content} class="projects"/>;
         break;
       case 'contact-me.js':
         content = [
-                    'let contacts = [',
+                    'let contactInfo = [',
                     '\xa0' + '{',
                     '\xa0\xa0' + "email: 'javenkn7@gmail.com',",
                     '\xa0' + '},',
@@ -94,7 +94,7 @@ class Detail extends React.Component {
                     '\xa0' + '{',
                     '\xa0\xa0' + "github: 'https://github.com/javenkn'",
                     '\xa0' + '},',
-                    ']'
+                    '];'
                   ]
         tabDetail = <File content={content} class="contact"/>;
         break;
