@@ -6,7 +6,7 @@ export default class File extends React.Component {
 
     let content = this.props.content;
     let newContent = content.map((element, i) => {
-      return <Info key={i} content={element} lineNum={i} />;
+      return <Info key={i} content={element} lineNum={i+1} />;
     });
 
     return (
