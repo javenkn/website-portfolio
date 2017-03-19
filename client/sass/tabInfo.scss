@@ -19,6 +19,12 @@
     margin-right: 10px;
     color: #767B85;
   }
+
+  .infoWrapper:nth-child(1) {
+    .line {
+      background-color: #353C47;
+    }
+  }
 }
 
 .about, .projects, .contact {
@@ -28,15 +34,15 @@
 .projects {
   font-size: 18px;
 
-  .infoWrapper:nth-child(n+11) {
+  .infoWrapper:nth-child(n+10) {
     .line {
       padding-left: 24px;
     }
   }
 }
 
-.contact {
-  .infoWrapper:nth-child(n+11) {
+.contact, .about {
+  .infoWrapper:nth-child(n+10) {
     .line {
       padding-left: 20px;
     }
