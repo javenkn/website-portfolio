@@ -31,11 +31,14 @@ class Detail extends React.Component {
       );
     });
 
-    let tabDetail = <Title />;
+    let tabDetail;
 
     let content;
 
     switch(selectedTab) {
+      case 'README':
+        tabDetail = <Title />;
+        break;
       case 'about.json':
         content = [
                     '{',
