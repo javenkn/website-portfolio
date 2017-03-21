@@ -117,6 +117,7 @@ class Detail extends React.Component {
     return (
       <div className="detail">
         <div className="navBar">
+          <div className="navTitle">Javen Nakamoto</div>
           {navBarItems}
         </div>
         <div className="tabContainer">
