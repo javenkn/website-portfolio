@@ -2,7 +2,8 @@ const initialState = {
   numTabsOpen: 1,
   selectedTab: 'README',
   openedTabs: ['README'],
-  openedOnce: true
+  openedOnce: true,
+  navLinks: ['README', 'about.json', 'projects.js', 'contact-me.js']
 };
 
 const reducer = (state = initialState, action) => {
@@ -47,6 +48,7 @@ const reducer = (state = initialState, action) => {
       const closeTab = action.data.tab;
       const index = currTabsOpened.indexOf(closeTab);
       const tabBefore = currTabsOpened[index - 1];
+      const tabAfter = currTabsOpened[index + 1];
       if(index !== -1) {
         currTabsOpened.splice(index, 1);
       }
@@ -60,12 +62,21 @@ const reducer = (state = initialState, action) => {
           openedOnce: false
         });
       } else { // else move the selectedTab state to the left
-        return Object.assign({}, state, {
-          numTabsOpen: state.numTabsOpen - 1,
-          selectedTab: tabBefore,
-          openedTabs: currTabsOpened,
-          openedOnce: false
-        });
+        if(!tabBefore) { // if there is none to the left move selectedTab to the right
+          return Object.assign({}, state, {
+            numTabsOpen: state.numTabsOpen - 1,
+            selectedTab: tabAfter,
+            openedTabs: currTabsOpened,
+            openedOnce: false
+          });
+        } else { // carry on with moving selectedTab to the left
+          return Object.assign({}, state, {
+            numTabsOpen: state.numTabsOpen - 1,
+            selectedTab: tabBefore,
+            openedTabs: currTabsOpened,
+            openedOnce: false
+          });
+        }
       }
       break;
     default:
