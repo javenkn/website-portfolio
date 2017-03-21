@@ -19,7 +19,7 @@ export default class Info extends React.Component {
       for(let i = 0; i < content.length; i++) { // goes through each letter/word/sentence sets the color
         let currChar = content[i];
         if(currChar === '{' || currChar === '}' || currChar === "'" ||
-          currChar === ';' || currChar === ',' || currChar === ']') { // if the chars are any of these
+          currChar === ';' || currChar === ',' || currChar === ']' || currChar === '[' || currChar === '"') { // if the chars are any of these
             if(word.includes('//')) { // website link
               newContent.push(<a href={word} key={Math.random() * 200 + 1} style={{color: '#A2BD8B'}}>{word}</a>);
             } else if(word.includes('@')) {
@@ -39,7 +39,7 @@ export default class Info extends React.Component {
           } else { // else it must be a key value pair, color is orange
             newContent.push(<span key={Math.random() * 200 + 1} style={{color: '#A2BD8B'}}>{word}</span>);
             word = '';
-            newContent.push(<span key={Math.random() * 200 + 1} style={{color: '#D08770'}}>{currChar}</span>);
+            newContent.push(<span className="colon" key={Math.random() * 200 + 1} style={{color: '#D08770'}}>{currChar}</span>);
           }
         } else { // meets none of the statements add to word
           word += currChar;
