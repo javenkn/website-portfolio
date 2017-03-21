@@ -37,7 +37,16 @@ class Detail extends React.Component {
 
     switch(selectedTab) {
       case 'README':
-        tabDetail = <Title />;
+        if(!this.props.openedOnce) {
+          content = [
+                      'Hi I\'m Javen Nakamoto and...',
+                      'welcome to my website!',
+                      'Click the files on the left to learn more!'
+                    ];
+          tabDetail = <File content={content} class="readme" />;
+        } else {
+          tabDetail = <Title />
+        }
         break;
       case 'about.json':
         content = [
@@ -45,10 +54,10 @@ class Detail extends React.Component {
                     '\xa0' + '"name": "Javen Nakamoto",',
                     '\xa0' + '"location": "Honolulu, HI",',
                     '\xa0' + '"university": "University of Hawaii at Manoa",',
-                    '\xa0' + '"graduation-date": "December 2016",',
+                    '\xa0' + '"graduated-in": "December 2016",',
                     '\xa0' + '"major": "Computer Engineer",',
                     '\xa0' + '"hobbies": [',
-                    '\xa0\xa0' + '"basketball", "fitness", "swimming"',
+                    '\xa0\xa0' + '"full-stack development","basketball", "fitness", "swimming"',
                     '\xa0' + ']',
                     '}'
                   ];
