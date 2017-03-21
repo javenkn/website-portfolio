@@ -1,7 +1,8 @@
 const initialState = {
   numTabsOpen: 1,
   selectedTab: 'README',
-  openedTabs: ['README']
+  openedTabs: ['README'],
+  openedOnce: true
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,7 +11,8 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         numTabsOpen: state.numTabsOpen,
         selectedTab: action.data.tab,
-        openedTabs: state.openedTabs
+        openedTabs: state.openedTabs,
+        openedOnce: false
       });
     case 'OPEN_TAB':
       const newTabsOpened = state.openedTabs.slice();
@@ -21,13 +23,22 @@ const reducer = (state = initialState, action) => {
         return Object.assign({}, state, {
           numTabsOpen: state.numTabsOpen + 1,
           selectedTab: action.data.tab,
-          openedTabs: newTabsOpened
+          openedTabs: newTabsOpened,
+          openedOnce: false
         });
       } else {
+        if(state.selectedTab === 'README') {
+          return Object.assign({}, state, { // don't change the openedOnce state
+          numTabsOpen: state.numTabsOpen,
+          selectedTab: action.data.tab,
+          openedTabs: newTabsOpened,
+        });
+        }
         return Object.assign({}, state, { // same thing without the additional 1 tab to numTabsOpen
           numTabsOpen: state.numTabsOpen,
           selectedTab: action.data.tab,
-          openedTabs: newTabsOpened
+          openedTabs: newTabsOpened,
+          openedOnce: false
         });
       }
       break;
@@ -45,13 +56,15 @@ const reducer = (state = initialState, action) => {
         return Object.assign({}, state, {
           numTabsOpen: state.numTabsOpen - 1,
           selectedTab: state.selectedTab,
-          openedTabs: currTabsOpened
+          openedTabs: currTabsOpened,
+          openedOnce: false
         });
       } else { // else move the selectedTab state to the left
         return Object.assign({}, state, {
           numTabsOpen: state.numTabsOpen - 1,
           selectedTab: tabBefore,
-          openedTabs: currTabsOpened
+          openedTabs: currTabsOpened,
+          openedOnce: false
         });
       }
       break;
