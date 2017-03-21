@@ -15,14 +15,20 @@ class TabBar extends React.Component {
 
   componentDidMount() {
     const welcomeTab = document.getElementsByClassName('tabWrapper')[0];
+    const readmeNav = document.getElementsByClassName('navLink-wrapper')[0];
+
     welcomeTab.style.backgroundColor = '#2B303B';
     welcomeTab.style.color = '#DEE0DC';
     welcomeTab.children[0].className = 'selectedTab';
+    readmeNav.style.backgroundColor = '#343D46';
+    readmeNav.style.color = '#DFE1E8';
   }
 
   componentDidUpdate() {
     const tabArr = this.props.openedTabs;
-    for(let i = 0; i < tabArr.length; i++) {
+    const navArr = this.props.navLinks;
+
+    for(let i = 0; i < tabArr.length; i++) { // for loop for the tabs
       const selectedTab = document.getElementsByClassName('tabWrapper')[i];
       if(this.props.selectedTab === tabArr[i]) {
         selectedTab.style.backgroundColor = '#2B303B';
@@ -34,6 +40,17 @@ class TabBar extends React.Component {
         selectedTab.style.color = '#65737F';
         selectedTab.children[1].style.visibility = 'hidden'; // hides the exit X
         selectedTab.children[0].className = 'tab'; // changes class back to tab
+      }
+    }
+
+    for(let j = 0; j < navArr.length; j++) { // for loop for the navlinks
+      const selectedNav = document.getElementsByClassName('navLink-wrapper')[j];
+      if(this.props.selectedTab === navArr[j]) { // highlight the correct navlink
+        selectedNav.style.backgroundColor = '#343D46';
+        selectedNav.style.color = '#DFE1E8';
+      } else { // unhighlight the correct navlink
+        selectedNav.style.backgroundColor = '';
+        selectedNav.style.color = '#65737F';
       }
     }
   }
