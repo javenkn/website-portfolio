@@ -27,8 +27,17 @@
   }
 }
 
-.about, .projects, .contact {
+.about, .projects, .contact, .readme {
   @extend .file;
+}
+
+.about .colon {
+  color: #DEE0DC !important;
+}
+
+.readme span{
+  font-size: 35px;
+  color: #DEE0DC !important;
 }
 
 .projects {
