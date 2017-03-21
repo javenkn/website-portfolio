@@ -47,32 +47,9 @@
   }
 }
 
-#typewriter {
-  width: 100%;
-  height: 100%;
-  font-size: 40px;
-  padding-bottom: 27px;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
-
-  .title {
-    display: inline-block;
-    color: #DEE0DC;
-    border-right: .05em solid;
-    animation: caret 1.2s steps(1) infinite;
-  }
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
 .line-title {
   padding: 0px 35px;
   margin-right: 10px;
   color: #767B85;
-  background-color: #353C47;
+  background-color: #2B303B;
 }
