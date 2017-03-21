@@ -21,16 +21,19 @@
   height: 100%;
 }
 
+.navLink-wrapper {
+  padding: 8px;
+  padding-left: 20px;
+  color: #65737F;
+
+  &:nth-child(1) {
+    margin-top: 55px;
+  }
+}
+
 .navLink {
   width: fit-content;
   display: inline-block;
-  color: #65737F;
-  margin-top: 15px;
-  margin-left: 20px;
-
-  &:nth-child(1) {
-    margin-top: 65px;
-  }
 
   &:hover {
     color: #DFE1DD;
@@ -45,6 +48,6 @@
   background-color: #1B1E25;
   color: #4D5964;
   font-size: 17px;
-  padding: 5px;
+  padding: 10px;
   padding-left: 15px;
 }
