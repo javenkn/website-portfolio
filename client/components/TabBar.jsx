@@ -22,7 +22,6 @@ class TabBar extends React.Component {
 
   componentDidUpdate() {
     const tabArr = this.props.openedTabs;
-    console.log(tabArr);
     for(let i = 0; i < tabArr.length; i++) {
       const selectedTab = document.getElementsByClassName('tabWrapper')[i];
       if(this.props.selectedTab === tabArr[i]) {
