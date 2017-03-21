@@ -1,5 +1,4 @@
 import React from 'react';
-import Tab from './Tab.jsx';
 import LineNumber from './LineNumber.jsx';
 import '../lib/typed.js';
 import '../sass/readme.scss';
