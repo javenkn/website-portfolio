@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: row;
   cursor: default;
+  color: rgb(101, 115, 127);
 
   &:hover .exit {
     visibility: visible !important;
@@ -44,6 +45,24 @@
 
   &:nth-child(1) {
     padding-left: 10px;
+  }
+}
+
+.contactTab {
+  @media (min-width: 840px) and (max-width: 847px) {
+    font-size: 15px;
+  }
+  @media (min-width: 832px) and (max-width: 839px) {
+    font-size: 14px;
+  }
+  @media (min-width: 824px) and (max-width: 831px) {
+    font-size: 13px;
+  }
+  @media (min-width: 816px) and (max-width: 823px) {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) and (max-width: 815px) {
+    font-size: 11px;
   }
 }
 

@@ -14,14 +14,29 @@ const mapStateToProps = (state) => {
 class TabBar extends React.Component {
 
   componentDidMount() {
-    const welcomeTab = document.getElementsByClassName('tabWrapper')[0];
-    const readmeNav = document.getElementsByClassName('navLink-wrapper')[0];
+    const tabArr = this.props.openedTabs;
+    const navArr = this.props.navLinks;
 
-    welcomeTab.style.backgroundColor = '#2B303B';
-    welcomeTab.style.color = '#DEE0DC';
-    welcomeTab.children[0].className = 'selectedTab';
-    readmeNav.style.backgroundColor = '#343D46';
-    readmeNav.style.color = '#DFE1E8';
+    for(let i = 0; i < tabArr.length; i++) {
+      const welcomeTab = document.getElementsByClassName('tabWrapper')[i];
+      if(this.props.selectedTab === tabArr[i]) {
+        welcomeTab.style.backgroundColor = '#2B303B';
+        welcomeTab.style.color = '#DEE0DC';
+        if(tabArr[i] === 'contact-me.js') {
+          welcomeTab.children[0].className = 'selectedTab contactTab';
+        } else {
+          welcomeTab.children[0].className = 'selectedTab';
+        }
+      }
+    }
+
+    for(let j = 0; j < navArr.length; j++) {
+      const readmeNav = document.getElementsByClassName('navLink-wrapper')[j];
+      if(this.props.selectedTab === navArr[j]) {
+        readmeNav.style.backgroundColor = '#343D46';
+        readmeNav.style.color = '#DFE1E8';
+      }
+    }
   }
 
   componentDidUpdate() {
@@ -34,12 +49,20 @@ class TabBar extends React.Component {
         selectedTab.style.backgroundColor = '#2B303B';
         selectedTab.style.color = '#DEE0DC';
         selectedTab.children[1].style.visibility = 'visible'; // shows the exit X
-        selectedTab.children[0].className = 'selectedTab';
+        if(tabArr[i] === 'contact-me.js') {
+          selectedTab.children[0].className = 'selectedTab contactTab';
+        } else {
+          selectedTab.children[0].className = 'selectedTab';
+        }
       } else {
         selectedTab.style.backgroundColor = '#1C1F26';
         selectedTab.style.color = '#65737F';
         selectedTab.children[1].style.visibility = 'hidden'; // hides the exit X
-        selectedTab.children[0].className = 'tab'; // changes class back to tab
+        if(tabArr[i] === 'contact-me.js') {
+          selectedTab.children[0].className = 'tab ' + 'contactTab';
+        } else {
+          selectedTab.children[0].className = 'tab'; // changes class back to tab
+        }
       }
     }
 
@@ -59,8 +82,13 @@ class TabBar extends React.Component {
     let openTabs = [];
     const tabArr = this.props.openedTabs;
     for(let i = 0; i < tabArr.length; i++) {
+      let contactClass = '';
+      if(tabArr[i] === 'contact-me.js') {
+        contactClass = 'contactTab';
+      }
       let newTab =
       <Tab
+        class={contactClass ? contactClass : ''}
         key={i}
         tabName={tabArr[i]}
         selectTab={this.props.changeTab.bind(this, tabArr[i])}
