@@ -22,11 +22,7 @@ class TabBar extends React.Component {
       if(this.props.selectedTab === tabArr[i]) {
         welcomeTab.style.backgroundColor = '#2B303B';
         welcomeTab.style.color = '#DEE0DC';
-        if(tabArr[i] === 'contact-me.js') {
-          welcomeTab.children[0].className = 'selectedTab contactTab';
-        } else {
-          welcomeTab.children[0].className = 'selectedTab';
-        }
+        welcomeTab.children[0].className = 'selectedTab';
       }
     }
 
@@ -49,20 +45,12 @@ class TabBar extends React.Component {
         selectedTab.style.backgroundColor = '#2B303B';
         selectedTab.style.color = '#DEE0DC';
         selectedTab.children[1].style.visibility = 'visible'; // shows the exit X
-        if(tabArr[i] === 'contact-me.js') {
-          selectedTab.children[0].className = 'selectedTab contactTab';
-        } else {
-          selectedTab.children[0].className = 'selectedTab';
-        }
+        selectedTab.children[0].className = 'selectedTab';
       } else {
         selectedTab.style.backgroundColor = '#1C1F26';
         selectedTab.style.color = '#65737F';
         selectedTab.children[1].style.visibility = 'hidden'; // hides the exit X
-        if(tabArr[i] === 'contact-me.js') {
-          selectedTab.children[0].className = 'tab ' + 'contactTab';
-        } else {
-          selectedTab.children[0].className = 'tab'; // changes class back to tab
-        }
+        selectedTab.children[0].className = 'tab'; // changes class back to tab
       }
     }
 
@@ -83,12 +71,8 @@ class TabBar extends React.Component {
     const tabArr = this.props.openedTabs;
     for(let i = 0; i < tabArr.length; i++) {
       let contactClass = '';
-      if(tabArr[i] === 'contact-me.js') {
-        contactClass = 'contactTab';
-      }
       let newTab =
       <Tab
-        class={contactClass ? contactClass : ''}
         key={i}
         tabName={tabArr[i]}
         selectTab={this.props.changeTab.bind(this, tabArr[i])}

@@ -3,7 +3,7 @@ const initialState = {
   selectedTab: 'README',
   openedTabs: ['README'],
   openedOnce: true,
-  navLinks: ['README', 'about.json', 'projects.js', 'contact-me.js']
+  navLinks: ['README', 'about.json', 'projects.js', 'contact.js']
 };
 
 const reducer = (state = initialState, action) => {

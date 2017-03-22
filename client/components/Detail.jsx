@@ -25,7 +25,7 @@ class Detail extends React.Component {
     const numTabsOpen = this.props.numTabsOpen;
     const selectedTab = this.props.selectedTab;
 
-    const navBarItems = ["README", "about.json", "projects.js", "contact-me.js"].map((item, i) => {
+    const navBarItems = ["README", "about.json", "projects.js", "contact.js"].map((item, i) => {
       return (
         <NavLink key={i} navName={item} showTab={this.props.openTab.bind(this, item)} />
       );
@@ -94,7 +94,7 @@ class Detail extends React.Component {
                   ]
         tabDetail = <File content={content} class="projects"/>;
         break;
-      case 'contact-me.js':
+      case 'contact.js':
         content = [
                     'let contactInfo = [',
                     '\xa0' + '{',

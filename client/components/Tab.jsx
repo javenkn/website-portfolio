@@ -7,7 +7,7 @@ export default class Tab extends React.Component {
     console.log(this.props.class);
     return (
       <div className="tabWrapper">
-        <div className={this.props.class ? "tab " + this.props.class : "tab"} onClick={this.props.selectTab}>{this.props.tabName}</div>
+        <div className="tab" onClick={this.props.selectTab}>{this.props.tabName}</div>
         <Exit handleClose={this.props.closeTab}/>
       </div>
     );
