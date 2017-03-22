@@ -53,10 +53,37 @@
 }
 
 .projects {
+  @media (min-width: 1100px) and (max-width: 1210px) {
+    font-size: 16px;
+  }
+  @media (min-width: 980px) and (max-width: 1099px) {
+    font-size: 14px;
+  }
+  @media (min-width: 865px) and (max-width: 979px) {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) and (max-width: 864px) {
+    font-size: 10px;
+  }
   font-size: 18px;
 
   .infoWrapper:nth-child(n+10) {
     .line {
+      @media (min-width: 1100px) and (max-width: 1210px) {
+        padding-left: 25px;
+      }
+      @media (min-width: 1007px) and (max-width: 1099px) {
+        padding-left: 27px;
+      }
+      @media (min-width: 890px) and (max-width: 1006px) {
+        padding-left: 17px;
+      }
+      @media (min-width: 865px) and (max-width: 889px) {
+        padding-left: 13px;
+      }
+      @media (min-width: 768px) and (max-width: 864px) {
+        padding-left: 14px;
+      }
       padding-left: 24px;
     }
   }
