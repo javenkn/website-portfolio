@@ -50,6 +50,9 @@
 }
 
 .footer {
+  @media (max-width: 767px) {
+    position: relative;
+  }
   position: absolute;
   width: 100%;
   align-self: flex-end;
