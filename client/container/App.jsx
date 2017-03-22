@@ -1,5 +1,6 @@
 import React from 'react';
 import Detail from '../components/Detail.jsx';
+import MobileDetail from '../components/MobileDetail.jsx';
 import MediaQuery from 'react-responsive';
 
 export default class App extends React.Component {
@@ -10,7 +11,7 @@ export default class App extends React.Component {
           <Detail />
         </MediaQuery>
         <MediaQuery query='(max-width: 767px)'>
-          <div>HELLO</div>
+          <MobileDetail />
         </MediaQuery>
       </div>
     );
