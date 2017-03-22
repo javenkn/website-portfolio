@@ -7,6 +7,8 @@ import {
   openTab
 } from '../actions/tab.js';
 
+import '../sass/mobile.scss';
+
 const mapStateToProps = (state) => {
   return state;
 }
@@ -14,8 +16,10 @@ const mapStateToProps = (state) => {
 class MobileDetail extends React.Component {
   render() {
     return(
-      <div class="mobile-detail">
+      <div className="mobile-detail">
         <MobileNavBar />
+        <div className="mobile-container">
+        </div>
         <Footer />
       </div>
     );
