@@ -9,6 +9,14 @@ class MobileNavBar extends React.Component {
   render() {
     return (
       <div className="mobile-nav">
+        <span>jN</span>
+        <input type="checkbox" id="menuButton" />
+        <label htmlFor="menuButton" className="menu-button-label">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </label>
       </div>
     )
   }
