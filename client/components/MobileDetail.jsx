@@ -15,12 +15,13 @@ const mapStateToProps = (state) => {
 
 class MobileDetail extends React.Component {
   render() {
+    console.log(this.props.mobile.selectedTab);
     return(
       <div className="mobile-detail">
         <MobileNavBar />
         <MobileMenu />
         <div className="mobile-container">
-          <div className="mobile-title">{this.props.mobile.selectedTab}</div>
+          <div className="mobile-title">{this.props.mobile.mobileSelectedTab}</div>
         </div>
         <Footer />
       </div>
