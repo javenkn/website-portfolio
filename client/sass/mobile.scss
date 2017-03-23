@@ -22,6 +22,13 @@
   height: 100%;
   width: 100%;
   background-color: #2B303B;
+
+  .mobile-title {
+    font-size: 30px;
+    padding-top: 10px;
+    text-align: center;
+    color: rgb(222, 224, 220);
+  }
 }
 
 .menu-button-label {
@@ -37,7 +44,7 @@
     position: absolute;
     height: 2px;
     width: 66%;
-    background-color: white;
+    background-color: rgb(222, 224, 220);
     left: 50%;
     transform: translateX(-50%);
     transition: 0.4s ease, width 0.3s ease;
@@ -76,4 +83,27 @@
       }
     }
   }
+}
+
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  padding-right: 15px;
+  padding-left: 30px;
+  right: 0;
+  top: 70px;
+  transition: 0.35s ease, height 0.35s 0.3s ease;
+  color: rgb(222, 224, 220);
+  opacity: 0.5;
+  background-color: #1B1E25;
+}
+
+.dropped {
+  display: flex;
+}
+
+.mobile-tab {
+  padding: 15px;
 }
