@@ -1,8 +1,10 @@
 import { combineReducers, compose } from 'redux';
 import tabReducer from './tab.js';
+import mobileReducer from './mobile.js';
 
 const rootReducer = combineReducers({
-  tab: tabReducer
+  tab: tabReducer,
+  mobile: mobileReducer
 });
 
 const finalCreateStore = compose(
@@ -13,4 +15,4 @@ const finalCreateStore = compose(
 
 const store = finalCreateStore(rootReducer, {});
 
-export default store;
+export default rootReducer;
