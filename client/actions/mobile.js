@@ -6,3 +6,12 @@ export function changeTab(tabName) {
     }
   };
 }
+
+export function changeProject(directionOfBtn) {
+  return {
+    type: 'CHANGE_PROJECT',
+    data: {
+      direction: directionOfBtn
+    }
+  };
+}
