@@ -95,8 +95,9 @@
   right: 0;
   top: 70px;
   transition: 0.35s ease, height 0.35s 0.3s ease;
-  color: rgb(222, 224, 220);
-  opacity: 0.5;
+  color: #BBC0C8;
+  // rgb(222, 224, 220);
+  // opacity: 0.5;
   background-color: #1B1E25;
 }
 
@@ -106,4 +107,9 @@
 
 .mobile-tab {
   padding: 15px;
+
+  &:hover {
+    color: #DFE1DD;
+    cursor: default;
+  }
 }

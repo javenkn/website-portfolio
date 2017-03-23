@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {
   changeTab,
-  openTab
-} from '../actions/tab.js';
+} from '../actions/mobile.js';
 
 const mapStateToProps = (state) => {
   return state;
@@ -14,7 +13,14 @@ class MobileMenu extends React.Component {
     let navLinks = ['About', 'Projects', 'Contact'];
     let menuArr = [];
     for(let i = 0; i < navLinks.length; i++) {
-      menuArr.push(<div key={i} className="mobile-tab">{navLinks[i]}</div>);
+      menuArr.push(
+      <div
+        key={i}
+        className="mobile-tab"
+        onClick={this.props.changeTab.bind(this, navLinks[i])}
+      >
+        {navLinks[i]}
+      </div>);
     }
     return(
       <div className="nav-menu">
@@ -25,6 +31,5 @@ class MobileMenu extends React.Component {
 }
 
 export default connect(mapStateToProps, {
-  changeTab,
-  openTab
+  changeTab
 })(MobileMenu);

@@ -4,9 +4,8 @@ import MobileNavBar from './MobileNavBar.jsx';
 import MobileMenu from './MobileMenu.jsx';
 import { connect } from 'react-redux';
 import {
-  changeTab,
-  openTab
-} from '../actions/tab.js';
+  changeTab
+} from '../actions/mobile.js';
 
 import '../sass/mobile.scss';
 
@@ -21,7 +20,7 @@ class MobileDetail extends React.Component {
         <MobileNavBar />
         <MobileMenu />
         <div className="mobile-container">
-          <div className="mobile-title">About</div>
+          <div className="mobile-title">{this.props.mobile.selectedTab}</div>
         </div>
         <Footer />
       </div>
@@ -30,6 +29,5 @@ class MobileDetail extends React.Component {
 }
 
 export default connect(mapStateToProps, {
-  changeTab,
-  openTab
+  changeTab
 })(MobileDetail);
