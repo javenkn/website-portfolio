@@ -31,6 +31,7 @@
   .mobile-title {
     font-size: 30px;
     padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
   }
 
@@ -41,6 +42,7 @@
   .mobile-projects{
     display: flex;
     flex-grow: 0;
+    padding: 0;
 
     .mobile-project-container {
       display: flex;
@@ -68,6 +70,10 @@
         img {
           max-width: 80%;
           max-height: 80%;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
         .description {
