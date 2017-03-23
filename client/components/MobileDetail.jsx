@@ -18,6 +18,11 @@ const mapStateToProps = (state) => {
 };
 
 class MobileDetail extends React.Component {
+
+  goToProject(link) {
+    window.location.href = link;
+  }
+
   render() {
     let content = '';
     let selectedTab = this.props.mobile.mobileSelectedTab;
@@ -34,25 +39,29 @@ class MobileDetail extends React.Component {
             title: 'Running Your Mouth',
             date: 'January 20 - 22, 2017',
             img: runningyourmouth,
-            description: 'A voice controlled endless runner game using Unity for the Global Game Jam 2017 Hackathon.'
+            description: 'A voice controlled endless runner game using Unity for the Global Game Jam 2017 Hackathon.',
+            link: 'http://globalgamejam.org/2017/games/running-your-mouth'
           },
           {
             title: 'Omni Mood',
             date: 'September - October, 2016',
             img: omnimood,
-            description: 'A web application that displays the mood of countries based on emojis coming from Twitter’s real-time feed.'
+            description: 'A web application that displays the mood of countries based on emojis coming from Twitter’s real-time feed.',
+            link: 'https://github.com/javenkn/omnimood'
           },
           {
             title: 'Made in Hawaii',
             date: 'September 2016',
             img: localmocos,
-            description: 'A web application that connects local suppliers and consumers with Hawaii grown/organic products.'
+            description: 'A web application that connects local suppliers and consumers with Hawaii grown/organic products.',
+            link: 'https://github.com/javenkn/localmocos'
           }
         ];
         const getProject =
           <MobileProject
             imgSrc={projects[this.props.mobile.projectIndex].img}
             description={projects[this.props.mobile.projectIndex].description}
+            handleClick={this.goToProject.bind(this, projects[this.props.mobile.projectIndex].link)}
           />;
 
         content =
