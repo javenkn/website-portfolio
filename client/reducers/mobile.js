@@ -1,12 +1,12 @@
 const initialState = {
-  selectedTab: 'About',
+  mobileSelectedTab: 'About',
 };
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_TAB':
       return Object.assign({}, state, {
-        selectedTab: action.data.tab
+        mobileSelectedTab: action.data.tab
       });
     default:
       return state;
