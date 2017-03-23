@@ -18,16 +18,10 @@ module.exports = {
     rules: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.scss$/,
-        // use: ExtractTextPlugin.extract({
-        //   fallback: 'style-loader',
-          loader: 'style-loader!css-loader!sass-loader'
-        // })
-      }
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
     ]
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    // new ExtractTextPlugin('client/style.css')
   ]
 };
