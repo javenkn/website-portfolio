@@ -1,16 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
-  return state;
-};
+export default class MobileNavBar extends React.Component {
+  dropMenu() {
+    // Drop Down Function
+    let menuButton = document.getElementById('menuButton');
+    let menuDrop = document.getElementsByClassName('nav-menu')[0];
+    menuButton.checked ? menuDrop.className += ' dropped' : menuDrop.className = 'nav-menu';
+  }
 
-class MobileNavBar extends React.Component {
   render() {
     return (
       <div className="mobile-nav">
         <span>jN</span>
-        <input type="checkbox" id="menuButton" />
+        <input type="checkbox" id="menuButton" onClick={this.dropMenu.bind(this)}/>
         <label htmlFor="menuButton" className="menu-button-label">
           <div className="bar"></div>
           <div className="bar"></div>
@@ -21,5 +23,3 @@ class MobileNavBar extends React.Component {
     )
   }
 }
-
-export default connect(mapStateToProps)(MobileNavBar);
