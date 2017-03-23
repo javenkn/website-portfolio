@@ -21,9 +21,9 @@ const mapStateToProps = (state) => {
 class Detail extends React.Component {
 
   render() {
-    const openedTabs = this.props.openedTabs;
-    const numTabsOpen = this.props.numTabsOpen;
-    const selectedTab = this.props.selectedTab;
+    const openedTabs = this.props.tab.openedTabs;
+    const numTabsOpen = this.props.tab.numTabsOpen;
+    const selectedTab = this.props.tab.selectedTab;
 
     const navBarItems = ["README", "about.json", "projects.js", "contact.js"].map((item, i) => {
       return (
@@ -37,7 +37,7 @@ class Detail extends React.Component {
 
     switch(selectedTab) {
       case 'README':
-        if(!this.props.openedOnce) {
+        if(!this.props.tab.openedOnce) {
           content = [
                       'Hi I\'m Javen Nakamoto and...',
                       'welcome to my website!',
