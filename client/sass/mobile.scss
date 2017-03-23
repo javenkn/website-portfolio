@@ -30,8 +30,8 @@
 
   .mobile-title {
     font-size: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     text-align: center;
   }
 
@@ -77,8 +77,12 @@
         }
 
         .description {
-          padding: 10px 0;
           text-align: center;
+        }
+
+        .project-title {
+          padding: 10px;
+          font-weight: bold;
         }
       }
     }
