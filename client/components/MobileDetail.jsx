@@ -61,6 +61,7 @@ class MobileDetail extends React.Component {
           <MobileProject
             imgSrc={projects[this.props.mobile.projectIndex].img}
             description={projects[this.props.mobile.projectIndex].description}
+            title={projects[this.props.mobile.projectIndex].title}
             handleClick={this.goToProject.bind(this, projects[this.props.mobile.projectIndex].link)}
           />;
 
