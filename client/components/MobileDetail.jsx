@@ -74,7 +74,18 @@ class MobileDetail extends React.Component {
         className = 'mobile-projects';
         break;
       case 'Contact':
-        content = <div className='linkedin'></div>;
+        content =
+        <div className="contacts">
+          <a className="gmail" href="mailto:javenkn7@gmail.com">javenkn7@gmail.com</a>
+          <div className="icons">
+            <div className='linkedin'>
+              <a href="https://linkedin.com/in/javenkn/" className="fa fa-linkedin-square fa-4x"></a>
+            </div>
+            <div className='github'>
+              <a href="https://github.com/javenkn/" className="fa fa-github-square fa-4x"></a>
+            </div>
+          </div>
+        </div>;
         className = 'mobile-contact';
         break;
     }

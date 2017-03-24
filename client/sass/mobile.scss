@@ -48,6 +48,7 @@
       display: flex;
       justify-content: center;
       flex: 0 0 100%;
+      padding-bottom: 55px;
 
       .prev {
         font-size: 50px;
@@ -66,6 +67,7 @@
         flex-direction: column;
         flex: 0 1 100%;
         align-items: center;
+        padding-top: 20px;
 
         img {
           max-width: 80%;
@@ -168,5 +170,50 @@
   &:hover {
     color: #DFE1DD;
     cursor: default;
+  }
+}
+
+.mobile-contact {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+
+    .gmail {
+      text-align: center;
+      text-decoration: none;
+      color: #DFE1DD;
+      font-size: 8vw;
+
+      &:hover {
+        color: #BC5F68;
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 7vw;
+
+      .fa {
+        text-decoration: none;
+      }
+
+      .fa-linkedin-square {
+        color: #007bb6;
+      }
+
+      .fa-github-square {
+        color: #DFE1DD;
+      }
+
+      .fa-4x {
+        font-size: 30vw;
+      }
+    }
   }
 }
