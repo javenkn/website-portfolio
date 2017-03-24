@@ -53,13 +53,17 @@
       .prev {
         font-size: 50px;
         padding-top: 18%;
+        margin-left: 10px;
 
         &:hover {
           cursor: default;
+          color: #A2BD8B;
         }
       }
       .next {
         @extend .prev;
+        margin-left: 0;
+        margin-right: 10px;
       }
 
       .project-container {
