@@ -11,6 +11,7 @@ import {
 import localmocos from 'file-loader!../imgs/localmocos.png';
 import omnimood from 'file-loader!../imgs/omnimood.png';
 import runningyourmouth from 'file-loader!../imgs/runningyourmouth.png';
+import profile from 'file-loader!../imgs/prof.png';
 import '../sass/mobile.scss';
 
 const mapStateToProps = (state) => {
@@ -30,7 +31,13 @@ class MobileDetail extends React.Component {
 
     switch(selectedTab) {
       case 'About':
-        content = "Hi my name is Javen Nakamoto. I recently graduated from the University of Hawaii at Manoa with a Computer Engineering Bachelor's degree. I am a Full-Stack Javascript developer who is fascinated with engineering technology. I am excited about opportunities to gain more practical knowledge and experience.";
+        let intro = "Hi my name is Javen Nakamoto. I recently graduated from the University of Hawaii at Manoa with a Computer Engineering Bachelor's degree. I am a Full-Stack Javascript developer who is fascinated with engineering technology. I am excited about opportunities to gain more practical knowledge and experience.";
+        content =
+        <div className="aboutContainer">
+          <div className="circlePic" style={{backgroundImage: 'url(' + profile + ')'}}>
+          </div>
+          <div className="intro">{intro}</div>
+        </div>
         className = 'mobile-about';
         break;
       case 'Projects':
