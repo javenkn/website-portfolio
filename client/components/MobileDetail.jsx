@@ -24,6 +24,14 @@ class MobileDetail extends React.Component {
     window.location.href = link;
   }
 
+  componentDidUpdate() {
+    // when component updates close the nav menu (so it doesn't get in the way)
+    let menuButton = document.getElementById('menuButton');
+    let menuDrop = document.getElementsByClassName('nav-menu')[0];
+    menuButton.checked = false;
+    menuDrop.className = 'nav-menu';
+  }
+
   render() {
     let content = '';
     let selectedTab = this.props.mobile.mobileSelectedTab;
@@ -31,7 +39,7 @@ class MobileDetail extends React.Component {
 
     switch(selectedTab) {
       case 'About':
-        let intro = "Hi my name is Javen Nakamoto. I recently graduated from the University of Hawaii at Manoa with a Computer Engineering Bachelor's degree. I am a Full-Stack Javascript developer who is fascinated with engineering technology. I am excited about opportunities to gain more practical knowledge and experience.";
+        let intro = "Hi my name is Javen Nakamoto. I recently graduated from the University of Hawaii at Manoa with a Computer Engineering Bachelor's degree. I am a Full-Stack JavaScript developer who is fascinated with engineering technology. I am excited about opportunities to gain more practical knowledge and experience.";
         content =
         <div className="aboutContainer">
           <div className="circlePic" style={{backgroundImage: 'url(' + profile + ')'}}>
