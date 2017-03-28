@@ -15,6 +15,7 @@ export default class App extends React.Component {
           setTimeout(() => { // changes the background color to the next line
             document.getElementsByClassName('typed-cursor')[0].style.display = 'none';
             document.getElementsByClassName('line-title')[0].style.backgroundColor = '#2B303B';
+            document.getElementsByClassName('readmeRow')[1].style.display = 'flex';
             document.getElementsByClassName('line-title')[1].style.backgroundColor = '#353C47';
 
             Typed.new(".subtitle", { // types out second title
@@ -24,6 +25,7 @@ export default class App extends React.Component {
                 setTimeout(() => { // changes the background color to the next line
                   document.getElementsByClassName('typed-cursor')[1].style.display = 'none';
                   document.getElementsByClassName('line-title')[1].style.backgroundColor = '#2B303B';
+                  document.getElementsByClassName('readmeRow')[2].style.display = 'flex';
                   document.getElementsByClassName('line-title')[2].style.backgroundColor = '#353C47';
 
                   Typed.new(".subtitle2", { // types out third title
@@ -45,11 +47,11 @@ export default class App extends React.Component {
           <LineNumber class="line-title" lineNum={1} />
           <div className="title"></div>
         </div>
-        <div className="readmeRow">
+        <div className="readmeRow" style={{display: 'none'}}>
           <LineNumber class="line-title" lineNum={2} />
           <div className="subtitle"></div>
         </div>
-        <div className="readmeRow">
+        <div className="readmeRow" style={{display: 'none'}}>
           <LineNumber class="line-title" lineNum={3} />
           <div className="subtitle2"></div>
         </div>
