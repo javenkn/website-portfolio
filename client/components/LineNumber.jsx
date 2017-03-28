@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 export default class LineNumber extends React.Component {
   render() {
