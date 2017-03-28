@@ -5,7 +5,8 @@
   "repository": "https://github.com/javenkn/website-portfolio.git",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "deploy": "webpack -p --config webpack.production.config.js"
   },
   "dependencies": {
     "html-webpack-plugin": "^2.28.0",
