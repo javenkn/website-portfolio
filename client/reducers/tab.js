@@ -9,6 +9,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_TAB':
+      if(!action.data.tab) {
+        return state;
+      }
       return Object.assign({}, state, {
         numTabsOpen: state.numTabsOpen,
         selectedTab: action.data.tab,

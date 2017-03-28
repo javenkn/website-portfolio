@@ -110,7 +110,7 @@ class MobileDetail extends React.Component {
         <MobileNavBar />
         <MobileMenu />
         <div className="mobile-container">
-          <div className="mobile-title">{this.props.mobile.mobileSelectedTab}</div>
+          <div className="mobile-title">{selectedTab}</div>
           <div className={className}>{content}</div>
         </div>
         <Footer />

@@ -6,8 +6,11 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case 'SELECT_TAB':
+      if(!action.data.mobileTab) {
+        return state;
+      }
       return Object.assign({}, state, {
-        mobileSelectedTab: action.data.tab
+        mobileSelectedTab: action.data.mobileTab
       });
     case 'CHANGE_PROJECT':
       if(action.data.direction == 'left') {
