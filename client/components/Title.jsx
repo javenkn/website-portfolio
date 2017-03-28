@@ -3,7 +3,7 @@ import LineNumber from './LineNumber.jsx';
 import '../lib/typed.js';
 import '../sass/readme.scss';
 
-export default class App extends React.Component {
+export default class Title extends React.Component {
 
   componentDidMount() {
     // sets the first line-title's background color
